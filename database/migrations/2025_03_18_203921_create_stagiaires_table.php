@@ -18,10 +18,9 @@ return new class extends Migration
             $table->date("datenaissance")->nullable();
             $table->decimal("poids",5,2)->nullable();
             $table->integer("taille")->nullable();
-            $table->string("photo")->nullable();
             $table->string("email")->unique()->nullable();
             $table->string("telephone")->nullable();
-            $table->timestamps();
+            $table->timestamps();//Ajoute la colonne created_at() et updated_at()
         });
     }
 

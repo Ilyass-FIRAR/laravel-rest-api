@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('filieres', function (Blueprint $table) {
+        Schema::create('groupes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->integer('massehoraire')->nullable();
-            $table->integer('coeff')->nullable();
-            $table->boolean("eff");
+            $table->string("codeGroupe")->unique();
+            $table->integer("anneformatoin");
+            $table->string("codefiliere");
+            $table->foreign("codefiliere")->references("codefiliere")->on("filieres")->onDelete("cascade");
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('filieres');
+        Schema::dropIfExists('groupes');
     }
 };

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FiliereController extends Controller
+class GroupeController extends Controller
 {
     //
 }

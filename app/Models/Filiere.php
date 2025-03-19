@@ -6,12 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filiere extends Model
 {
-   protected $fillable=[
-    'nom',
-    'massehoraire',
-    'coeff',
-    "eff",
-    'created_at',
-    'updated_at',
-    ];
+   protected $fillable=['codefiliere','libellefiliere'];
+   
+public function groupes(){
+return $this->hasMany(Group::class,'codefiliere','codefiliere');
+   }
 }
